@@ -1,4 +1,4 @@
-# disk-usage-monitor
+# Disk Usage Monitor
 
 A bash script that checks disk usage on your system and warns you if any partition goes over the threshold.
 
