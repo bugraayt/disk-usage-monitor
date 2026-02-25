@@ -17,7 +17,7 @@ echo "Current disk usage for $mountpoint ($filesystem): $usagee%"
 	else
 		echo "$mountpoint disk usage is normal ($usagee%)."
 	fi
-done < <(df -h | awk 'NR>1 && $1 != "devfs" {print $1, $5, $9}')
+done < <(df -h | awk 'NR>1 {print $1, $5, $6}')
 read -p "Do you want to see the disks over the treshold? (y/n)" warning_only
         if [ "$warning_only" = "y" ] && [ -n "$warnings" ];
         then
