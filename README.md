@@ -63,9 +63,9 @@ WARNING!! /boot disk usage is above (31%)! Wed Feb 25 01:44:32 CET 2026
 
 The column order in df -h is different on macOS. Change this line:
 ```
-f -h | awk 'NR>1 {print $1, $5, $6}'
+df -h | awk 'NR>1 {print $1, $5, $6}'
 ```
 to:
 ```
-bashdf -h | awk 'NR>1 && $1 != "devfs" {print $1, $5, $9}'
+df -h | awk 'NR>1 && $1 != "devfs" {print $1, $5, $9}'
 ```
